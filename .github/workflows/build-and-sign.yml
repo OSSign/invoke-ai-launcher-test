@@ -27,7 +27,7 @@ permissions:
   contents: write
 
 jobs:
-build-windows:
+  build-windows:
     if: github.event_name == 'push' || github.event.inputs.build_windows == 'true'
     runs-on: windows-latest
     environment: code-signing
