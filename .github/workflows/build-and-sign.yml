@@ -55,6 +55,7 @@ jobs:
           key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-modules
 
       - name: Install dependencies
+        if: steps.cache-node-modules.outputs.cache-hit != 'true'
         run: npm ci
 
       - name: Get UV hash

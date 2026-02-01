@@ -34,7 +34,7 @@ export default {
   win: {
     target: ['nsis'],
     ...getWindowsSigningOptions,
-    //forceCodeSigning: true,
+    forceCodeSigning: true,
   },
   linux: {
     target: ['AppImage'],
@@ -43,7 +43,7 @@ export default {
     provider: 'github',
     owner: 'invoke-ai',
     repo: 'launcher',
-  },
+  },                                            
   electronFuses: {
     runAsNode: false,
     enableCookieEncryption: true,
