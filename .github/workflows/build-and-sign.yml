@@ -86,7 +86,7 @@ jobs:
         run: npm run package
         env:
           ENABLE_SIGNING: true
-          OSSIGN_CONFIG: ${{ secrets.OSSIGN_CONFIG_TEST }}
+          OSSIGN_CONFIG_BASE64: ${{ secrets.OSSIGN_CONFIG_TEST }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Upload artifacts
