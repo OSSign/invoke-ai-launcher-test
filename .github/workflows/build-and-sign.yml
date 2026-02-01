@@ -52,7 +52,7 @@ jobs:
             node_modules
             ~/.electron
             ~/.electron-gyp
-          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-modules-1.0.7
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-modules-1.0.10
 
       - name: Install dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
