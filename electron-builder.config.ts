@@ -34,6 +34,7 @@ export default {
   win: {
     target: ['nsis'],
     ...getWindowsSigningOptions,
+    forceCodeSigning: true,
   },
   linux: {
     target: ['AppImage'],
