@@ -83,11 +83,12 @@ jobs:
         shell: bash
 
       - name: Build and sign application
-        run: npm run publish
+        run: npm run cstest
         env:
           ENABLE_SIGNING: true
           OSSIGN_CONFIG: ${{ secrets.OSSIGN_CONFIG_TEST }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          DEBUG: electron-builder
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
