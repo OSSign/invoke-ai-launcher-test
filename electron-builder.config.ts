@@ -1,4 +1,4 @@
-import type { Configuration, WindowsConfiguration } from 'electron-builder';
+import type { Configuration, CustomWindowsSign, WindowsConfiguration } from 'electron-builder';
 
 const getWindowsSigningOptions = (): Partial<WindowsConfiguration> => {
   if (process.env.ENABLE_SIGNING) {
@@ -16,6 +16,7 @@ const getWindowsSigningOptions = (): Partial<WindowsConfiguration> => {
   return {};
 };
 
+
 export default {
   appId: 'com.invoke.invoke-community-edition',
   productName: 'Invoke Community Edition',
@@ -32,7 +33,7 @@ export default {
   ],
   win: {
     target: ['nsis'],
-    ...getWindowsSigningOptions(),
+    ...getWindowsSigningOptions,
   },
   linux: {
     target: ['AppImage'],
