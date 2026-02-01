@@ -1,7 +1,6 @@
 import type { Configuration, CustomWindowsSign, WindowsConfiguration } from 'electron-builder';
 
 const getWindowsSigningOptions = (): Partial<WindowsConfiguration> => {
-  if (process.env.ENABLE_SIGNING) {
     return {
       signtoolOptions: {
         // Delegate signing to our own script. This script is called once for each executable. The script contains
@@ -12,9 +11,7 @@ const getWindowsSigningOptions = (): Partial<WindowsConfiguration> => {
         signingHashAlgorithms: ['sha256'],
       },
     };
-  }
-  return {};
-};
+  };
 
 
 export default {
@@ -33,7 +30,7 @@ export default {
   ],
   win: {
     target: ['nsis'],
-    ...getWindowsSigningOptions,
+    ...getWindowsSigningOptions(),
     forceCodeSigning: true,
   },
   linux: {
