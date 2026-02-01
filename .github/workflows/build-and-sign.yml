@@ -83,7 +83,7 @@ jobs:
         shell: bash
 
       - name: Build and sign application
-        run: npm run cstest
+        run: npm run package
         env:
           ENABLE_SIGNING: true
           OSSIGN_CONFIG: ${{ secrets.OSSIGN_CONFIG_TEST }}
