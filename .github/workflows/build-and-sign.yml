@@ -52,7 +52,7 @@ jobs:
             node_modules
             ~/.electron
             ~/.electron-gyp
-          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-modules
+          key: ${{ runner.os }}-node-${{ env.NODE_VERSION }}-modules-1.0.7
 
       - name: Install dependencies
         if: steps.cache-node-modules.outputs.cache-hit != 'true'
@@ -88,7 +88,6 @@ jobs:
           ENABLE_SIGNING: true
           OSSIGN_CONFIG: ${{ secrets.OSSIGN_CONFIG_TEST }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          DEBUG: electron-builder
 
       - name: Upload artifacts
         uses: actions/upload-artifact@v4
